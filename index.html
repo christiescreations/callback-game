@@ -350,9 +350,9 @@ function buildRounds(f, company, first, fs, fv, fi) {
   const coWords = [lc, lc.split(' ')[0], ...f.coWords];
   const ids = a => a.map(x => x.id);
   const r1 = {
-    name:'Priya Nair', role:'Talent partner', initials:'PN', color:'#2f7f86',
+    name:'Morgan Kingsley', role:'Talent partner', initials:'PN', color:'#2f7f86',
     blurb:'Friendly and quick. She is working through a screening checklist.',
-    intro:`Hi ${first}, I'm Priya from the talent team at ${company}. Thanks for making time. I have three questions for you.`,
+    intro:`Hi ${first}, I'm Morgan from the talent team at ${company}. Thanks for making time. I have three questions for you.`,
     qs:[`Tell me a bit about yourself and why you want to work at ${company}.`, ...pickQs(fv.map(v => ({q:v.q, tags:[v.id]})), ids(fv), 2)],
     close:"That's everything I needed. Thanks for your time. We'll be in touch.",
     react:{low:'(glances at the clock) Mm-hm. Thanks.', mid:'(ticks a box) Okay, good.', high:"(smiles and writes quickly) Great, that's helpful."},
@@ -362,19 +362,19 @@ function buildRounds(f, company, first, fs, fv, fi) {
       {id:'co', name:'Knowing the company', v:coWords}]
   };
   const r2 = {
-    name:'Marcus Webb', role:f.r2role, initials:'MW', color:'#b7791f',
+    name:'Ashford Croft', role:f.r2role, initials:'MW', color:'#b7791f',
     blurb:'Direct, asks follow-ups, and has watched many projects fail.',
-    intro:"Marcus Webb. I lead the team you would join. Let's get into how you actually work.",
+    intro:"Ashford Croft. I lead the team you would join. Let's get into how you actually work.",
     qs:pickQs([...f.skills.map(s => ({q:s.q, tags:[s.id]})), ...f.combos], ids(fs), 3),
     close:"That's all from me. Thanks for coming in. We'll be in touch.",
     react:{low:'(frowns at his notes) Right.', mid:'(nods slowly) Okay.', high:'(leans back, then forward) Good. Keep going.'},
-    passNote:`Hi ${first}, Marcus here. Dana Okafor, our ${f.r3role}, would like to meet you for a final conversation.`,
+    passNote:`Hi ${first}, Croft here. Daniella Hathaway, our ${f.r3role}, would like to meet you for a final conversation.`,
     targets:fs.map(toTarget)
   };
   const r3 = {
-    name:'Dana Okafor', role:f.r3role, initials:'DO', color:'#7b4a8c',
+    name:'Daniella Hathaway', role:f.r3role, initials:'DH', color:'#7b4a8c',
     blurb:'Few words. She cares about outcomes, not stories.',
-    intro:"Dana Okafor. I'll keep this short. Three questions.",
+    intro:"Daniella Hathaway. I'll keep this short. Three questions.",
     qs:[...pickQs(fi.map(i => ({q:i.q, tags:[i.id]})), ids(fi), 2), f.final],
     close:'Thank you. We will decide within two weeks.',
     react:{low:'(silence, then looks at the next page) Mm.', mid:'(small nod) Noted.', high:"(puts down her pen) That's a real answer."},
